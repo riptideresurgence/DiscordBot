@@ -1,7 +1,7 @@
 import { botClient } from "./bot/client";
 import { IntentsBitField } from "discord.js";
 
-export function createClient(prefix: string, token: string) {
+export function createClient(prefix: string, clientId: string, token: string) {
     const intents = new IntentsBitField();
     intents.add(
         IntentsBitField.Flags.Guilds,
@@ -15,7 +15,7 @@ export function createClient(prefix: string, token: string) {
         IntentsBitField.Flags.GuildModeration,
     );
 
-    const client = new botClient(prefix, token, {
+    const client = new botClient(prefix, clientId, token, {
         intents: intents,
     });
 
