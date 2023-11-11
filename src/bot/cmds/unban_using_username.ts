@@ -23,19 +23,20 @@ module.exports = {
         core.roblox.getUserInfo(username)
             .then(async (info) => {
                 // 2 database requests.........
-                const isBanned = await core.player.isPlayerBanned(info.id);
-                const banData = await core.database.findBannedDocumentFromUserId(info.id);
+                const userId = await core.roblox.getUserIdFromUsername(username);
+                const isBanned = await core.player.isPlayerBanned(userId);
+                const banData = await core.database.findBannedDocumentFromUserId(userId);
                 if (banData == null || !isBanned) {
-                    return newLayer.reply(`${info.id} is not banned.`);
+                    return newLayer.reply(`${info.username} is not banned.`);
                 }
 
                 const playerName = core.roblox.getNameRepresentationFromInfo(info);
-                core.player.unbanPlayer(info.id)
+                core.player.unbanPlayer(userId)
                     .then(() => {
-                        newLayer.reply(`${playerName} (${info.id}) has been unbanned.`);
+                        newLayer.reply(`${playerName} (${userId}) has been unbanned.`);
                     })
                     .catch((err: any) => {
-                        newLayer.reply(`Cannot unban ${playerName} (${info.id}) due to an error: ${err}`);
+                        newLayer.reply(`Cannot unban ${playerName} (${userId}) due to an error: ${err}`);
                     });
             })
             .catch((err: any) => {

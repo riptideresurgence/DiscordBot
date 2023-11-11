@@ -30,16 +30,17 @@ module.exports = {
         const banReason: string = args[2] || "None specified.";
 
         core.roblox.getUserInfo(username)
-            .then((info) => {
+            .then(async (info) => {
+                const userId = await core.roblox.getUserIdFromUsername(username);
                 const playerName = core.roblox.getNameRepresentationFromInfo(info);
-                core.player.banPlayer("Discord", info.id, banDuration, newLayer.author ? `@${newLayer.author.tag}` : "unknown", banReason)
+                core.player.banPlayer("Discord", userId, banDuration, newLayer.author ? `@${newLayer.author.tag}` : "unknown", banReason)
                     .then(() => {
                         const currentDate = new Date();
                         const currentTime = Math.floor(currentDate.getTime() / 1000);
-                        newLayer.reply(`${playerName} (${info.id}) has been banned until ${banDuration != -1 ? `<t:${currentTime + banDuration * 60}:F>` : "indefinitely"}.`);
+                        newLayer.reply(`${playerName} (${userId}) has been banned until ${banDuration != -1 ? `<t:${currentTime + banDuration * 60}:F>` : "indefinitely"}.`);
                     })
                     .catch((err: any) => {
-                        newLayer.reply(`Cannot ban ${playerName} (${info.id}) due to an error: ${err}`);
+                        newLayer.reply(`Cannot ban ${playerName} (${userId}) due to an error: ${err}`);
                     })
             })
             .catch((err: any) => {
