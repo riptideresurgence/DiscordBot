@@ -41,4 +41,4 @@ function fetchCommand(commandName: string) {
     return commands.get(commandName);
 }
 
-export { parseCommands, fetchCommand }
+export { parseCommands, fetchCommand, slashCommandsData }

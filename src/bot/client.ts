@@ -1,9 +1,11 @@
-import { ActivityType, Client, ClientOptions, ChatInputCommandInteraction, Events, Interaction, Message, User } from "discord.js";
+import { ActivityType, Client, ClientOptions, ChatInputCommandInteraction, Events, Interaction, Message, User, REST, Routes } from "discord.js";
 import * as commands from "./commands";
 import * as permissions from "./permissions";
 
 class botClient extends Client<true> {
     private _token: string;
+    private _clientId: string;
+
     public prefix: string;
 
     private _onMessage(message: Message) {
@@ -69,6 +71,13 @@ class botClient extends Client<true> {
         // Initialize commands
         commands.parseCommands();
         
+        // Add slash command to REST
+        const botRest = new REST().setToken(this._token);
+        botRest.put(
+			Routes.applicationCommands(this._clientId),
+			{ body: commands.slashCommandsData },
+		);
+        
         // Register events
         this.on(Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
@@ -81,10 +90,11 @@ class botClient extends Client<true> {
         return super.login(this._token);
     }
 
-    constructor(prefix: string, botToken: string, options: ClientOptions) {
+    constructor(prefix: string, clientId: string, botToken: string, options: ClientOptions) {
         super(options);
 
         this.prefix = prefix;
+        this._clientId = clientId;
         this._token = botToken;
     }
 }
