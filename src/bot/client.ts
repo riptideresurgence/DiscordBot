@@ -1,4 +1,4 @@
-import { Client, ClientOptions, ChatInputCommandInteraction, Events, Interaction, Message, User } from "discord.js";
+import { ActivityType, Client, ClientOptions, ChatInputCommandInteraction, Events, Interaction, Message, User } from "discord.js";
 import * as commands from "./commands";
 import * as permissions from "./permissions";
 
@@ -56,6 +56,15 @@ class botClient extends Client<true> {
         }
     }
 
+    public setPresence(presenceText: string) {
+        let botUser = this.user;
+        if (botUser) {
+            botUser.setActivity(`${presenceText} | Made by cutymeo / shiinazzz.`, {
+                type: ActivityType.Watching,
+            });
+        }
+    }
+
     public override async login() {
         // Initialize commands
         commands.parseCommands();
@@ -63,6 +72,7 @@ class botClient extends Client<true> {
         // Register events
         this.on(Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
+            this.setPresence("hi all, scott here");
         });
         this.on(Events.MessageCreate, this._onMessage);
         this.on(Events.InteractionCreate, this._onInteraction);
