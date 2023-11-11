@@ -1,0 +1,24 @@
+{
+  "name": "@riptide/discordbot",
+  "version": "0.0.1",
+  "description": "Discord Bot that handles various tasks for Riptide Resurgence.",
+  "main": "./dist/index",
+  "types": "./dist/index",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "author": "cutymeo / shiinazzz",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "discord.js": "^14.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
