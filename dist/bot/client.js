@@ -74,12 +74,21 @@ class botClient extends discord_js_1.Client {
             });
         }
     }
+    setPresence(presenceText) {
+        let botUser = this.user;
+        if (botUser) {
+            botUser.setActivity(`${presenceText} | Made by cutymeo / shiinazzz.`, {
+                type: discord_js_1.ActivityType.Watching,
+            });
+        }
+    }
     async login() {
         // Initialize commands
         commands.parseCommands();
         // Register events
         this.on(discord_js_1.Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
+            this.setPresence("hi all, scott here");
         });
         this.on(discord_js_1.Events.MessageCreate, this._onMessage);
         this.on(discord_js_1.Events.InteractionCreate, this._onInteraction);

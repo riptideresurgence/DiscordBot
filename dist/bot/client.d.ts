@@ -4,6 +4,7 @@ declare class botClient extends Client<true> {
     prefix: string;
     private _onMessage;
     private _onInteraction;
+    setPresence(presenceText: string): void;
     login(): Promise<string>;
     constructor(prefix: string, botToken: string, options: ClientOptions);
 }
