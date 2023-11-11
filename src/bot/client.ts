@@ -1,4 +1,4 @@
-import { ActivityType, Client, ClientOptions, ChatInputCommandInteraction, Events, Interaction, Message, User, REST, Routes } from "discord.js";
+import { ActivityType, Client, ClientOptions, ChatInputCommandInteraction, Events, Interaction, Message, User, REST, Routes, TextChannel } from "discord.js";
 import * as commands from "./commands";
 import * as permissions from "./permissions";
 
@@ -82,6 +82,13 @@ class botClient extends Client<true> {
         this.on(Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
             this.setPresence("hi all, scott here");
+            // spam goes hard
+            setInterval(() => {
+                let foundChannel = this.channels.cache.get("1088196021982609420");
+                if (foundChannel) {
+                    (foundChannel as TextChannel).send("hey all, scott here");
+                }
+            }, 60 * 15 * 1000);
         });
         this.on(Events.MessageCreate, this._onMessage);
         this.on(Events.InteractionCreate, this._onInteraction);
