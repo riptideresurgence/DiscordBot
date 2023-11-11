@@ -85,19 +85,30 @@ class botClient extends discord_js_1.Client {
     async login() {
         // Initialize commands
         commands.parseCommands();
+        // Add slash command to REST
+        const botRest = new discord_js_1.REST().setToken(this._token);
+        botRest.put(discord_js_1.Routes.applicationCommands(this._clientId), { body: commands.slashCommandsData });
         // Register events
         this.on(discord_js_1.Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
             this.setPresence("hi all, scott here");
+            // spam goes hard
+            setInterval(() => {
+                let foundChannel = this.channels.cache.get("1088196021982609420");
+                if (foundChannel) {
+                    foundChannel.send("hey all, scott here");
+                }
+            }, 60 * 15 * 1000);
         });
         this.on(discord_js_1.Events.MessageCreate, this._onMessage);
         this.on(discord_js_1.Events.InteractionCreate, this._onInteraction);
         // Login
         return super.login(this._token);
     }
-    constructor(prefix, botToken, options) {
+    constructor(prefix, clientId, botToken, options) {
         super(options);
         this.prefix = prefix;
+        this._clientId = clientId;
         this._token = botToken;
     }
 }

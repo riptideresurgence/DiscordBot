@@ -1,1 +1,1 @@
-export declare function createClient(prefix: string, token: string): void;
+export declare function createClient(prefix: string, clientId: string, token: string): void;
