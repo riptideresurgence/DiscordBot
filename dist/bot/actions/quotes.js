@@ -12,7 +12,8 @@ const QUOTES = [
     "https://www.youtube.com/watch?v=YZ86Awv8Fzk",
     "sussy baka",
     "Hello! I am a girl, and I need Nitro! DM me if you want to give me nitro. I am a girl btw.",
-    "cyriss is such a cyriss"
+    "cyriss is such a cyriss",
+    "https://www.youtube.com/watch?v=h1HM57j-ShE"
 ];
 const CHANNEL_ID = "1088196021982609420";
 let currentClient = undefined;
