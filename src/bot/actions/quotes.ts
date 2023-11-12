@@ -19,7 +19,7 @@ const CHANNEL_ID = "1088196021982609420";
 
 let currentClient: botClient | undefined = undefined;
 let intervalHandler: NodeJS.Timeout | undefined = undefined;
-const INTERVAL = 60 * 20 * 1000; // 20 Minutes
+const INTERVAL = 60 * 15 * 1000; // 15 Minutes
 
 function setClient(client: botClient) {
     currentClient = client;
