@@ -1,6 +1,7 @@
 import { ActivityType, Client, ClientOptions, ChatInputCommandInteraction, Events, Interaction, Message, User, REST, Routes, TextChannel } from "discord.js";
 import * as commands from "./commands";
 import * as permissions from "./permissions";
+import * as quotes from "./actions/quotes";
 
 class botClient extends Client<true> {
     private _token: string;
@@ -76,22 +77,21 @@ class botClient extends Client<true> {
         botRest.put(
 			Routes.applicationCommands(this._clientId),
 			{ body: commands.slashCommandsData },
-		);
+		)
+            .then(() => {})
+            .catch((err: any) => {
+                console.warn(`DiscordBot: Cannot send slash commands data: ${err}`);
+            })
         
         // Register events
         this.on(Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
             this.setPresence("hi all, scott here");
-            // spam goes hard
-            setInterval(() => {
-                let foundChannel = this.channels.cache.get("1088196021982609420");
-                if (foundChannel) {
-                    (foundChannel as TextChannel).send("hey all, scott here");
-                }
-            }, 60 * 15 * 1000);
+            quotes.run();
         });
         this.on(Events.MessageCreate, this._onMessage);
         this.on(Events.InteractionCreate, this._onInteraction);
+        quotes.setClient(this);
 
         // Login
         return super.login(this._token);
