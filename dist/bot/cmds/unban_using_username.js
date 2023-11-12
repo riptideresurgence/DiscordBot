@@ -31,7 +31,7 @@ module.exports = {
     slashData: new discord_js_1.SlashCommandBuilder()
         .setName("unban_using_username")
         .setDescription("Unban a player, using their username instead of user ID.")
-        .addStringOption((option) => option.setName("user_id").setDescription("User ID of a player.").setRequired(true)),
+        .addStringOption((option) => option.setName("user_name").setDescription("User name of a player.").setRequired(true)),
     async execute(interaction, args) {
         const newLayer = new client_1.botCompatibilityLayer(interaction, true);
         await newLayer.init(false);

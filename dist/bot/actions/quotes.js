@@ -17,7 +17,7 @@ const QUOTES = [
 const CHANNEL_ID = "1088196021982609420";
 let currentClient = undefined;
 let intervalHandler = undefined;
-const INTERVAL = 60 * 20 * 1000; // 20 Minutes
+const INTERVAL = 60 * 15 * 1000; // 15 Minutes
 function setClient(client) {
     currentClient = client;
 }
