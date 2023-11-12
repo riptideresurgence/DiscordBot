@@ -32,7 +32,7 @@ function run() {
         }
         let foundChannel = currentClient.channels.cache.get(CHANNEL_ID);
         if (foundChannel) {
-            foundChannel.send("hey all, scott here");
+            foundChannel.send(QUOTES[Math.floor(Math.random() * QUOTES.length)]);
         }
     }, INTERVAL);
 }
