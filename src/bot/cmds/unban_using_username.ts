@@ -8,7 +8,7 @@ module.exports = {
 	slashData: new SlashCommandBuilder()
 		.setName("unban_using_username")
 		.setDescription("Unban a player, using their username instead of user ID.")
-        .addStringOption((option: SlashCommandStringOption) => option.setName("user_id").setDescription("User ID of a player.").setRequired(true)),
+        .addStringOption((option: SlashCommandStringOption) => option.setName("user_name").setDescription("User name of a player.").setRequired(true)),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
 		const newLayer = new botCompatibilityLayer(interaction, true);
         await newLayer.init(false);
