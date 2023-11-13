@@ -13,12 +13,19 @@ const QUOTES = [
     "sussy baka",
     "Hello! I am a girl, and I need Nitro! DM me if you want to give me nitro. I am a girl btw.",
     "cyriss is such a cyriss",
-    "https://www.youtube.com/watch?v=h1HM57j-ShE"
+    "https://www.youtube.com/watch?v=h1HM57j-ShE",
+    "Hello everybody my name is Markiplier",
+    "vuhzl is a girl, kill em",
+    "codex_promo",
+    "boost server for tester",
+    "brenkar clock",
+    "repost to scare crazyblox",
+    "rizz"
 ];
 const CHANNEL_ID = "1088196021982609420";
+const INTERVAL = 60 * 10 * 1000; // 10 Minutes
 let currentClient = undefined;
 let intervalHandler = undefined;
-const INTERVAL = 60 * 15 * 1000; // 15 Minutes
 function setClient(client) {
     currentClient = client;
 }
