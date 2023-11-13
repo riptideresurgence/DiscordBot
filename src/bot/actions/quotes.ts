@@ -21,7 +21,10 @@ const QUOTES = [
     "boost server for tester",
     "brenkar clock",
     "repost to scare crazyblox",
-    "rizz"
+    "rizz",
+    "https://media.discordapp.net/attachments/1116091340216868867/1148391790521618482/caption.gif",
+    "https://tenor.com/view/rr-riptide-resurgence-fe2-resurgence-riptide-gif-3199897355922511130",
+    ""
 ];
 const CHANNEL_ID = "1088196021982609420";
 const INTERVAL = 60 * 10 * 1000; // 10 Minutes
