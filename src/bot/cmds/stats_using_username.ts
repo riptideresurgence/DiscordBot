@@ -16,7 +16,7 @@ function getMaxXP(level: number) {
 
 module.exports = {
 	slashData: new SlashCommandBuilder()
-		.setName("stats")
+		.setName("stats_using_username")
 		.setDescription("Fetch a player's stats, using their username instead of user ID.")
         .addStringOption((option: SlashCommandStringOption) => option.setName("user_name").setDescription("User name of a player.").setRequired(true)),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {

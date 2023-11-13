@@ -37,7 +37,7 @@ function getMaxXP(level) {
 }
 module.exports = {
     slashData: new discord_js_1.SlashCommandBuilder()
-        .setName("stats")
+        .setName("stats_using_username")
         .setDescription("Fetch a player's stats, using their username instead of user ID.")
         .addStringOption((option) => option.setName("user_name").setDescription("User name of a player.").setRequired(true)),
     async execute(interaction, args) {
