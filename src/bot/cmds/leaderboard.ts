@@ -53,7 +53,7 @@ module.exports = {
             leaderboardName = `Current Month's Leaderboard - ${currentMonthName} ${currentYear}`;
         } else if (leaderboardSection == "prev_month") {
             leaderboardStore = `stupidFart!!!CMLeaderStore${lastMonthName}${lastYear}`;
-            leaderboardName = `Current Month's Leaderboard - ${lastMonthName} ${lastYear}`;
+            leaderboardName = `Previous Month's Leaderboard - ${lastMonthName} ${lastYear}`;
         }
 
         core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 20, true)
