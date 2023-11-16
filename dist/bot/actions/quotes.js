@@ -25,7 +25,7 @@ const QUOTES = [
     "https://tenor.com/view/rr-riptide-resurgence-fe2-resurgence-riptide-gif-3199897355922511130",
     ""
 ];
-const CHANNEL_ID = "1088196021982609420";
+const CHANNEL_ID = "1174491501967982663";
 const INTERVAL = 60 * 10 * 1000; // 10 Minutes
 let currentClient = undefined;
 let intervalHandler = undefined;
