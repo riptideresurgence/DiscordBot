@@ -43,19 +43,26 @@ module.exports = {
                 month: 'long',
             });
         }
+        const currentMonthName = getMonthName(currentMonth);
+        const lastMonthName = getMonthName(lastMonth);
+
         let leaderboardStore = "ATLeaderStore";
         let leaderboardName = "All Time Leaderboard"
         if (leaderboardSection == "cur_month") {
-            leaderboardStore = `stupidFart!!!CMLeaderStore${currentMonth}${currentYear}`;
-            leaderboardName = `Current Month's Leaderboard - ${currentMonth} ${currentYear}`;
+            leaderboardStore = `stupidFart!!!CMLeaderStore${currentMonthName}${currentYear}`;
+            leaderboardName = `Current Month's Leaderboard - ${currentMonthName} ${currentYear}`;
         } else if (leaderboardSection == "prev_month") {
-            leaderboardStore = `stupidFart!!!CMLeaderStore${lastMonth}${lastYear}`;
-            leaderboardName = `Current Month's Leaderboard - ${lastMonth} ${lastYear}`;
+            leaderboardStore = `stupidFart!!!CMLeaderStore${lastMonthName}${lastYear}`;
+            leaderboardName = `Current Month's Leaderboard - ${lastMonthName} ${lastYear}`;
         }
 
         core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 20, true)
             .then(async (entries) => {
                 let userIds = entries.map(x => parseInt(x.id));
+                if (userIds.length == 0) {
+                    return newLayer.reply("Leaderboard is empty.");
+                }
+
                 core.roblox.getBatchUserInfo(userIds)
                     .then((batchInfo) => {
                         const constructedLeaderboardData: {name: string, xp: number}[] = [];
