@@ -3,7 +3,7 @@ import { botCompatibilityLayer } from "../client"
 
 import * as core from "@riptide/core";
 
-const XP_CAP = 10000;
+const XP_CAP = 25000;
 
 function clamp(value: number, min: number, max: number) {
     return Math.min(Math.max(value, min), max);
