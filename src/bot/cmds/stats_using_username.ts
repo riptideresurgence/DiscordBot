@@ -59,7 +59,17 @@ module.exports = {
                         const levelText = `:sparkles: **Level:** ${playerStats.level}`;
                         const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;
                         const titleText = `:name_badge: **Title:** ${playerStats.rank}`;
-                        const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(${playerStats.battlepoints}/100)*`
+                        if (playerStats.battlerank == "X") {
+				if (data.stats.Xrankdata.CalculationPeriod == 10) {
+				 const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(X Power: ${data.stats.Xrankdata.Power})*`
+				}
+				if (data.stats.Xrankdata.CalculationPeriod < 10) {
+				 const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(Calculating: ${data.stats.Xrankdata.CalculationPeriod}/10)*`
+				}
+			}
+			if (playerStats.battlerank != "X") {
+			 const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(${playerStats.battlepoints}/100)*`
+			}
                         const tokensText = `:moneybag: **Tokens:** ${playerStats.coins}`;
                         const shardsText = `:gem: **Shards:** ${playerStats.gems}`;
                         const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
