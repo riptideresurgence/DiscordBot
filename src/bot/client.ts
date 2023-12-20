@@ -62,7 +62,7 @@ class botClient extends Client<true> {
     public setPresence(presenceText: string) {
         let botUser = this.user;
         if (botUser) {
-            botUser.setActivity(`${presenceText} | Made by cutymeo / shiinazzz.`, {
+            botUser.setActivity(`${presenceText} | bot made by cutymeo / shiinazzz.`, {
                 type: ActivityType.Watching,
             });
         }
@@ -86,7 +86,7 @@ class botClient extends Client<true> {
         // Register events
         this.on(Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
-            this.setPresence("Hello everybody my name is Markiplier");
+            this.setPresence("this is like that time i was in fortnite.");
             quotes.run();
         });
         this.on(Events.MessageCreate, this._onMessage);
