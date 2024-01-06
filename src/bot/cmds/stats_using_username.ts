@@ -56,35 +56,70 @@ module.exports = {
                             return newLayer.reply("Player do not have stats data!");
                         }
 
-                        const levelText = `:sparkles: **Level:** ${playerStats.level}`;
-                        const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;
-                        const titleText = `:name_badge: **Title:** ${playerStats.rank}`;
                         if (playerStats.battlerank == "X") {
-				if (data.stats.Xrankdata.CalculationPeriod == 10) {
-				 const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(X Power: ${data.stats.Xrankdata.Power})*`
-				}
-				if (data.stats.Xrankdata.CalculationPeriod < 10) {
-				 const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(Calculating: ${data.stats.Xrankdata.CalculationPeriod}/10)*`
-				}
-			}
-			if (playerStats.battlerank != "X") {
-			 const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(${playerStats.battlepoints}/100)*`
-			}
-                        const tokensText = `:moneybag: **Tokens:** ${playerStats.coins}`;
-                        const shardsText = `:gem: **Shards:** ${playerStats.gems}`;
-                        const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
-                        const deathsText = `:headstone: **Deaths:** ${playerStats.deaths}`;
-                        const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
+                        if (playerStats.stats.Xrankdata.CalculationPeriod == 10) {
+                            const levelText = `:sparkles: **Level:** ${playerStats.level}`;
+                            const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
+                            const titleText = `:name_badge: **Title:** ${playerStats.rank}`; 
+                            const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(X Power: ${playerStats.stats.Xrankdata.Power})*`
+                            const tokensText = `:moneybag: **Tokens:** ${playerStats.coins}`;                     
+                            const shardsText = `:gem: **Shards:** ${playerStats.gems}`; 
+                            const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
+                            const deathsText = `:headstone: **Deaths:** ${playerStats.deaths}`;
+                            const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
 
-                        const embed = new EmbedBuilder()
+                            const embed = new EmbedBuilder()                           
                             .setTitle(`Current Stats - ${playerName}`)
                             .setURL(`https://www.roblox.com/users/${userId}/profile`)
                             .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}`)
                             .setThumbnail(playerThumbnail)
                             .setColor("#adb4d3")
                             .setTimestamp();
-                      
+                            newLayer.reply({ embeds: [embed] });
+                        }
+                        if (playerStats.stats.Xrankdata.CalculationPeriod < 10) {
+                            const levelText = `:sparkles: **Level:** ${playerStats.level}`;
+                            const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
+                            const titleText = `:name_badge: **Title:** ${playerStats.rank}`; 
+                            const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(Calculating: ${playerStats.stats.Xrankdata.CalculationPeriod}/10)*`
+                            const tokensText = `:moneybag: **Tokens:** ${playerStats.coins}`;                     
+                            const shardsText = `:gem: **Shards:** ${playerStats.gems}`; 
+                            const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
+                            const deathsText = `:headstone: **Deaths:** ${playerStats.deaths}`;
+                            const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
+
+                            const embed = new EmbedBuilder()                           
+                            .setTitle(`Current Stats - ${playerName}`)
+                            .setURL(`https://www.roblox.com/users/${userId}/profile`)
+                            .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}`)
+                            .setThumbnail(playerThumbnail)
+                            .setColor("#adb4d3")
+                            .setTimestamp();
+                            newLayer.reply({ embeds: [embed] });
+                        }
+                    }
+
+                    if (playerStats.stats.Xrankdata.CalculationPeriod != "X") {
+                        const levelText = `:sparkles: **Level:** ${playerStats.level}`;
+                        const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
+                        const titleText = `:name_badge: **Title:** ${playerStats.rank}`; 
+                        const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(${playerStats.battlepoints}/100)*`
+                        const tokensText = `:moneybag: **Tokens:** ${playerStats.coins}`;                     
+                        const shardsText = `:gem: **Shards:** ${playerStats.gems}`; 
+                        const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
+                        const deathsText = `:headstone: **Deaths:** ${playerStats.deaths}`;
+                        const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
+
+                        const embed = new EmbedBuilder()                           
+                        .setTitle(`Current Stats - ${playerName}`)
+                        .setURL(`https://www.roblox.com/users/${userId}/profile`)
+                        .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}`)
+                        .setThumbnail(playerThumbnail)
+                        .setColor("#adb4d3")
+                        .setTimestamp();
                         newLayer.reply({ embeds: [embed] });
+                    }
+                
                     })
                     .catch((err) => {
                         newLayer.reply(`Cannot fetch stats: ${err}`);
