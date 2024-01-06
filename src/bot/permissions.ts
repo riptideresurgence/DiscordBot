@@ -1,7 +1,7 @@
 const PERMISSIONS_LIST: {
     [permissionName: string]: string[]
 } = {
-    MODERATOR: ["456202569740713986"]
+    MODERATOR: ["456202569740713986", "1182869627169148999", "460056192509542400"]
 }
 
 function getUserPermissions(user_id: string): string[] {
