@@ -16,8 +16,8 @@ function getMaxXP(level: number) {
 
 module.exports = {
 	slashData: new SlashCommandBuilder()
-		.setName("stats_using_username")
-		.setDescription("Fetch a player's stats, using their username instead of user ID.")
+		.setName("riptide_stats")
+		.setDescription("Fetch a player's Riptide Resurgence stats.")
         .addStringOption((option: SlashCommandStringOption) => option.setName("user_name").setDescription("User name of a player.").setRequired(true)),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
 		const newLayer = new botCompatibilityLayer(interaction, true);
