@@ -162,4 +162,5 @@ module.exports = {
                 newLayer.reply(`Cannot fetch leaderboard: ${err}`);
             });
         }
-};
+},
+}
