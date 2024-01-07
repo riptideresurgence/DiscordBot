@@ -22,16 +22,16 @@ class botClient extends Client<true> {
 
         const foundCommand = commands.fetchCommand(commandName);
         if (foundCommand) {
+            if (message.author.id == "876953124546420830") {
+                new botCompatibilityLayer(message, false).reply(`No`);
+                return;
+            }
             if (!foundCommand.execute) {
                 new botCompatibilityLayer(message, false).reply("Command cannot be executed: No execute function found.");
                 return;
             }
             if (foundCommand.permissions && !permissions.userHasPermission(message.author.id, foundCommand.permissions)) {
                 new botCompatibilityLayer(message, false).reply(`You do not have permission to run this command!\nCommand permission: [${foundCommand.permissions.join(", ")}]`);
-                return;
-            }
-            if (message.author.id == 876953124546420830) {
-                new botCompatibilityLayer(message, false).reply(`No`);
                 return;
             }
             foundCommand.execute(message, parsedArgs)
