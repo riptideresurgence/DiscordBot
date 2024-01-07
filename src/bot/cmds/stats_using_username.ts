@@ -76,7 +76,7 @@ module.exports = {
                             .setColor("#adb4d3")
                             .setTimestamp();
                             newLayer.reply({ embeds: [embed] });
-                        }
+                        } 
                         if (playerStats.Xrankdata.CalculationPeriod < 10) {
                             const levelText = `:sparkles: **Level:** ${playerStats.level}`;
                             const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
