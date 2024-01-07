@@ -55,6 +55,12 @@ module.exports = {
                             return newLayer.reply("Player do not have stats data!");
                         }
 
+                        if (playerData.savedOptions.HideStats) {
+                            if (playerData.savedOptions.HideStats.Value == true) {
+                                return newLayer.reply("This player has disabled others from viewing their stats.");
+                            }
+                        }
+
                         if (playerStats.battlerank == "X") {
                             if (playerStats.Xrankdata.CalculationPeriod == 10) {
                                 const levelText = `:sparkles: **Level:** ${playerStats.level}`;
