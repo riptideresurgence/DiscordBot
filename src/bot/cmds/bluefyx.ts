@@ -1,8 +1,6 @@
 import { ChatInputCommandInteraction, Message, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 import { botCompatibilityLayer } from "../client"
 
-import * as core from "@riptide/core";
-
 module.exports = {
 	slashData: new SlashCommandBuilder()
 		.setName("bluefyx")
