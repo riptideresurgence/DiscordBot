@@ -40,6 +40,6 @@ module.exports = {
         }
         
 
-        return newLayer.reply("The game isn't in a state where stats can be obtained, please wait until the game releases or a playtest occurs.");
+        return newLayer.reply("The game isn't in a state where the current stage rotation can be obtained, please wait until the game releases or a playtest occurs.");
 	},
 };
