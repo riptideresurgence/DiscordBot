@@ -57,11 +57,11 @@ module.exports = {
                         }
 
                         if (playerStats.battlerank == "X") {
-                        if (playerStats.stats.Xrankdata.CalculationPeriod == 10) {
+                        if (playerStats.Xrankdata.CalculationPeriod == 10) {
                             const levelText = `:sparkles: **Level:** ${playerStats.level}`;
                             const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
                             const titleText = `:name_badge: **Title:** ${playerStats.rank}`; 
-                            const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(X Power: ${playerStats.stats.Xrankdata.Power})*`
+                            const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(X Power: ${playerStats.Xrankdata.Power})*`
                             const tokensText = `:moneybag: **Tokens:** ${playerStats.coins}`;                     
                             const shardsText = `:gem: **Shards:** ${playerStats.gems}`; 
                             const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
@@ -77,11 +77,11 @@ module.exports = {
                             .setTimestamp();
                             newLayer.reply({ embeds: [embed] });
                         }
-                        if (playerStats.stats.Xrankdata.CalculationPeriod < 10) {
+                        if (playerStats.Xrankdata.CalculationPeriod < 10) {
                             const levelText = `:sparkles: **Level:** ${playerStats.level}`;
                             const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
                             const titleText = `:name_badge: **Title:** ${playerStats.rank}`; 
-                            const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(Calculating: ${playerStats.stats.Xrankdata.CalculationPeriod}/10)*`
+                            const battleText = `:crossed_swords: **Battle Rank:** ${playerStats.battlerank} *(Calculating: ${playerStats.Xrankdata.CalculationPeriod}/10)*`
                             const tokensText = `:moneybag: **Tokens:** ${playerStats.coins}`;                     
                             const shardsText = `:gem: **Shards:** ${playerStats.gems}`; 
                             const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
@@ -99,7 +99,7 @@ module.exports = {
                         }
                     }
 
-                    if (playerStats.stats.Xrankdata.CalculationPeriod != "X") {
+                    if (playerStats.Xrankdata.CalculationPeriod != "X") {
                         const levelText = `:sparkles: **Level:** ${playerStats.level}`;
                         const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
                         const titleText = `:name_badge: **Title:** ${playerStats.rank}`; 
