@@ -66,16 +66,17 @@ module.exports = {
                                 const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
                                 const deathsText = `:headstone: **Deaths:** ${playerStats.deaths}`;
                                 const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
+                                const recentwinText = `:map: **Most Recent Survival:** ${playerData.replayData.MapName}`;
     
                                 const embed = new EmbedBuilder()                           
                                 .setTitle(`Current Stats - ${playerName}`)
                                 .setURL(`https://www.roblox.com/users/${userId}/profile`)
-                                .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}`)
+                                .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}`)
                                 .setThumbnail(playerThumbnail)
                                 .setColor("#adb4d3")
                                 .setTimestamp();
                                 newLayer.reply({ embeds: [embed] });
-                            }
+                            } 
                             if (playerStats.Xrankdata.CalculationPeriod < 10) {
                                 const levelText = `:sparkles: **Level:** ${playerStats.level}`;
                                 const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
@@ -86,11 +87,12 @@ module.exports = {
                                 const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
                                 const deathsText = `:headstone: **Deaths:** ${playerStats.deaths}`;
                                 const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
+                                const recentwinText = `:map: **Most Recent Survival:** ${playerData.replayData.MapName}`;
     
                                 const embed = new EmbedBuilder()                           
                                 .setTitle(`Current Stats - ${playerName}`)
                                 .setURL(`https://www.roblox.com/users/${userId}/profile`)
-                                .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}`)
+                                .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}`)
                                 .setThumbnail(playerThumbnail)
                                 .setColor("#adb4d3")
                                 .setTimestamp();
@@ -106,11 +108,12 @@ module.exports = {
                             const ticketsText = `:tickets: **Tickets:** ${playerStats.tickets}`;
                             const deathsText = `:headstone: **Deaths:** ${playerStats.deaths}`;
                             const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
+                            const recentwinText = `:map: **Most Recent Survival:** ${playerData.replayData.MapName}`;
     
                             const embed = new EmbedBuilder()                           
                             .setTitle(`Current Stats - ${playerName}`)
                             .setURL(`https://www.roblox.com/users/${userId}/profile`)
-                            .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}`)
+                            .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}`)
                             .setThumbnail(playerThumbnail)
                             .setColor("#adb4d3")
                             .setTimestamp();
