@@ -3,10 +3,10 @@ import { TextChannel } from "discord.js";
 import { botClient } from "../client";
 
 const QUOTES = [
-    "https://media.discordapp.net/attachments/1187777649351856320/1193350957174628372/maxresdefault.png",
+    "<@497226382573699084> hi https://youtu.be/bq7coAa865Q",
 ];
 const CHANNEL_ID = "1173630298936856708";
-const INTERVAL = 3600000; // 10 Minutes
+const INTERVAL = 60000 //3600000; // 10 Minutes
 
 let currentClient: botClient | undefined = undefined;
 let intervalHandler: NodeJS.Timeout | undefined = undefined;
