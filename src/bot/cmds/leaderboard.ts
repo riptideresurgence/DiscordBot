@@ -15,6 +15,7 @@ module.exports = {
                     {name: "All Time", value: "all_time"},
                     {name: "Current Month", value: "cur_month"},
                     {name: "Previous Month", value: "prev_month"},
+                    {name: "Surgefest: Candy Canes vs Gingerbread", value: "fest_xmas"},
                 )
         ),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>) {
@@ -54,9 +55,14 @@ module.exports = {
         } else if (leaderboardSection == "prev_month") {
             leaderboardStore = `stupidFart!!!CMLeaderStore${lastMonthName}${lastYear}`;
             leaderboardName = `Previous Month's Leaderboard - ${lastMonthName} ${lastYear}`;
+            
+        } else if (leaderboardSection == "fest_xmas") {
+            leaderboardStore = `stupidFart!!!FestTop50_Christmas`;
+            leaderboardName = `Surgefest Top 50 Leaderboard - Candy Canes vs Gingerbread`;
         }
 
-        core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 20, true)
+        if (leaderboardSection == "fest_xmas") {
+            core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 50, true)
             .then(async (entries) => {
                 let userIds = entries.map(x => parseInt(x.id));
                 if (userIds.length == 0) {
@@ -105,5 +111,55 @@ module.exports = {
             .catch((err) => {
                 newLayer.reply(`Cannot fetch leaderboard: ${err}`);
             });
-	},
+        } else {
+            core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 20, true)
+            .then(async (entries) => {
+                let userIds = entries.map(x => parseInt(x.id));
+                if (userIds.length == 0) {
+                    return newLayer.reply("Leaderboard is empty.");
+                }
+
+                core.roblox.getBatchUserInfo(userIds)
+                    .then((batchInfo) => {
+                        const constructedLeaderboardData: {name: string, xp: number}[] = [];
+
+                        batchInfo.forEach((info) => {
+                            const xpValue = parseInt(entries.filter(x => parseInt(x.id) == info.userId)[0].value);
+                            constructedLeaderboardData.push({
+                                name: core.roblox.getNameRepresentationFromInfo(info),
+                                xp: xpValue
+                            });
+                        });
+
+                        const sortedLeaderboardData = constructedLeaderboardData.sort((a, b) => b.xp - a.xp);
+                        const leaderboardListForSend: string[] = [];
+                        const emojis: {[id: number]: string} = {
+                            0: ":first_place:",
+                            1: ":second_place:",
+                            2: ":third_place:"
+                        }
+
+                        for (let i = 0; i < sortedLeaderboardData.length; i++) {
+                            if (i <= 2) {
+                                leaderboardListForSend.push(`${emojis[i]} **${sortedLeaderboardData[i].name}** : *${sortedLeaderboardData[i].xp} EXP*`)
+                            } else {
+                                leaderboardListForSend.push(`**${i + 1}th - ${sortedLeaderboardData[i].name}** : *${sortedLeaderboardData[i].xp} EXP*`)
+                            }
+                        }
+                        const embed = new EmbedBuilder()
+                            .setTitle(leaderboardName)
+                            .setDescription(leaderboardListForSend.join("\n"))
+                            .setColor("#00b0f4")
+                            .setTimestamp();
+                      
+                        newLayer.reply({ embeds: [embed] });
+                    })
+                    .catch((err) => {
+                        newLayer.reply(`Cannot fetch players' info: ${err}`);
+                    })
+            })
+            .catch((err) => {
+                newLayer.reply(`Cannot fetch leaderboard: ${err}`);
+            });
+        }
 };
