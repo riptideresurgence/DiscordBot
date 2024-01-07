@@ -56,7 +56,7 @@ module.exports = {
                             return newLayer.reply("Player do not have stats data!");
                         }
 
-                        if (playerData.savedOptions.HideStats) {
+                        if (playerData.savedOptions.HideStats) { 
                             if (playerData.savedOptions.HideStats.Value == true) {
                                 return newLayer.reply("This player has disabled others from viewing their stats.");
                             }
