@@ -4,7 +4,7 @@ import { botCompatibilityLayer } from "../client"
 import * as core from "@riptide/core";
 
 module.exports = {
-    permissions: ["MODERATOR"],
+    permissions: ["INGAMEMOD"],
 	slashData: new SlashCommandBuilder()
 		.setName("ban_using_username")
 		.setDescription("Ban a player, using their username instead of user ID.")
