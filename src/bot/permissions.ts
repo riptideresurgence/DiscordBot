@@ -9,7 +9,7 @@ const PERMISSIONS_LIST: {
 function getUserPermissions(user_id: string): string[] {
     const userPermissions: string[] = [];
     Object.keys(PERMISSIONS_LIST).forEach((permissionName: string) => {
-        if (PERMISSIONS_LIST.INGAMEMOD.indexOf(user_id) != -1) {
+        if (PERMISSIONS_LIST[permissionName].indexOf(user_id) != -1) {
             userPermissions.push(permissionName);
         }
     });
