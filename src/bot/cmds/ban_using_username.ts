@@ -37,7 +37,7 @@ module.exports = {
                     .then(() => {
                         const currentDate = new Date();
                         const currentTime = Math.floor(currentDate.getTime() / 1000);
-                        newLayer.reply(`${playerName} (${userId}) has been banned until ${banDuration != -1 ? `<t:${currentTime + banDuration * 60}:F>` : "indefinitely"}.`);
+                        newLayer.reply(`${playerName} (${userId}) has been banned for "${banReason}" until ${banDuration != -1 ? `<t:${currentTime + banDuration * 60}:F>` : "indefinitely"}.`);
                     })
                     .catch((err: any) => {
                         newLayer.reply(`Cannot ban ${playerName} (${userId}) due to an error: ${err}`);
