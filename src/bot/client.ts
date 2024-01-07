@@ -22,7 +22,7 @@ class botClient extends Client<true> {
 
         const foundCommand = commands.fetchCommand(commandName);
         if (foundCommand) {
-            if (permissions.userHasPermission(message.author.id, `BANNED`)) {
+            if (permissions.userHasPermission(message.author.id, ["BANNED"])) {
                 new botCompatibilityLayer(message, false).reply(`You are currently blacklisted from using the bot.\nIf this was a mistake, contact cyriss in DMs.`);
                 return;
             }
