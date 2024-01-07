@@ -21,4 +21,4 @@ module.exports = {
 			return (foundChannel as TextChannel).send(args[0]);
         }
 	},
-};
+}; 
