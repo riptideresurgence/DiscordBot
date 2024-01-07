@@ -47,6 +47,10 @@ class botClient extends Client<true> {
         
         const foundCommand = commands.fetchCommand(interaction.commandName);
         if (foundCommand && foundCommand.slashData) {
+            if (permissions.userHasPermission(message.author.id, ["BANNED"])) {
+                new botCompatibilityLayer(message, false).reply(`You are currently blacklisted from using the bot.\nIf this was a mistake, contact cyriss in DMs.`);
+                return;
+            }
             if (!foundCommand.execute) {
                 new botCompatibilityLayer(interaction, false).reply("Command cannot be executed: No execute function found.");
                 return;
