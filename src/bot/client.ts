@@ -90,7 +90,7 @@ class botClient extends Client<true> {
         // Register events
         this.on(Events.ClientReady, () => {
             //Log("DiscordBot: Ready for command");
-            this.setPresence("this is like that time i was in fortnite.");
+            this.setPresence("if you're reading this please spam ping mippy.");
             quotes.run();
         });
         this.on(Events.MessageCreate, this._onMessage);
