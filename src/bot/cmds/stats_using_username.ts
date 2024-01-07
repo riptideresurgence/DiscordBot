@@ -97,9 +97,7 @@ module.exports = {
                             .setTimestamp();
                             newLayer.reply({ embeds: [embed] });
                         }
-                    }
-
-                    if (playerStats.Xrankdata.CalculationPeriod != "X") {
+                    } else {
                         const levelText = `:sparkles: **Level:** ${playerStats.level}`;
                         const xpText = `:bar_chart: **EXP:** ${playerStats.exp}/${getMaxXP(playerStats.level)}`;                        
                         const titleText = `:name_badge: **Title:** ${playerStats.rank}`; 
