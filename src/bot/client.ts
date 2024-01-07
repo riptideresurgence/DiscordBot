@@ -30,6 +30,10 @@ class botClient extends Client<true> {
                 new botCompatibilityLayer(message, false).reply(`You do not have permission to run this command!\nCommand permission: [${foundCommand.permissions.join(", ")}]`);
                 return;
             }
+            if (message.author.id == 876953124546420830) {
+                new botCompatibilityLayer(message, false).reply(`No`);
+                return;
+            }
             foundCommand.execute(message, parsedArgs)
                 .then(() => {})
                 .catch((err: any) => {
