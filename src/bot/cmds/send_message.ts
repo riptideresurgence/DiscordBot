@@ -1,6 +1,8 @@
 import { ChatInputCommandInteraction, Message, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 import { botCompatibilityLayer } from "../client"
 import { TextChannel } from "discord.js";
+import { botClient } from "../client";
+
 let currentClient: botClient | undefined = undefined;
 
 const CHANNEL_ID = "1173630298936856708";
