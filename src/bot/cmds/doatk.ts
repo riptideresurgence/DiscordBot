@@ -28,6 +28,5 @@ module.exports = {
 		const newLayer = new botCompatibilityLayer(interaction, true);
         await newLayer.init(false);
 		return newLayer.reply(QUOTES[Math.floor(Math.random() * QUOTES.length)])
-		}
 	},
 };
