@@ -8,7 +8,7 @@ module.exports = {
 	slashData: new SlashCommandBuilder()
 		.setName("ban")
 		.setDescription("Ban a player. This command will ban the player from all bitmapped games.")
-        .addIntegerOption((option: SlashCommandIntegerOption) => option.setName("user_id").setDescription("User ID of a player.").setRequired(true))
+        .addStringOption((option: SlashCommandStringOption) => option.setName("user_name").setDescription("User name of a player.").setRequired(true))
         .addIntegerOption((option: SlashCommandIntegerOption) => option.setName("ban_duration").setDescription("Ban duration (in minutes). Set to -1 will ban for indefinitely.").setRequired(true))
         .addStringOption((option: SlashCommandStringOption) => option.setName("reason").setDescription("Ban reason").setRequired(true)),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
@@ -16,11 +16,11 @@ module.exports = {
         await newLayer.init(false);
         if (interaction instanceof ChatInputCommandInteraction)
             if (args.length == 0)
-                args = [interaction.options.getInteger("user_id"), interaction.options.getInteger("ban_duration"), interaction.options.getString("reason")]
+                args = [interaction.options.getString("user_name"), interaction.options.getInteger("ban_duration"), interaction.options.getString("reason")]
 
-        const userId: number | undefined = args[0] ? parseInt(args[0]) : undefined;
-        if (!userId)
-            return newLayer.reply("User ID must be a number.");
+        const username: string | undefined = args[0];
+            if (!username)
+                return newLayer.reply("User name must be a string.");
         const banDuration: number | undefined = args[1] ? parseInt(args[1]) : undefined;
         if (!banDuration)
             return newLayer.reply("Ban duration must be a number.");
@@ -29,8 +29,9 @@ module.exports = {
         }
         const banReason: string = args[2] || "None specified.";
 
-        core.roblox.getUserInfo(userId)
-            .then((info) => {
+        core.roblox.getUserInfo(username)
+            .then(async (info) => {
+                const userId = await core.roblox.getUserIdFromUsername(username);
                 const playerName = core.roblox.getNameRepresentationFromInfo(info);
                 core.player.banPlayer("Discord", userId, banDuration, newLayer.author ? `@${newLayer.author.tag}` : "unknown", banReason)
                     .then(() => {
