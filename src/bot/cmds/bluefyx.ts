@@ -6,7 +6,7 @@ module.exports = {
 	.setName("bluefyx")
 	.setDescription("bluefyx")
 	.addStringOption((option: SlashCommandStringOption) => 
-		option.setName("section")
+		option.setName("bluefyx")
 			.setDescription("Select the option to display.")
 			.setRequired(true)
 			.addChoices(
@@ -21,7 +21,7 @@ module.exports = {
             return newLayer.reply("This command can only be used as a slash command.");
         }
 
-        const bluefyxCommand = interaction.options.getString("section");
+        const bluefyxCommand = interaction.options.getString("bluefyx");
         if (!bluefyxCommand) {
             return newLayer.reply("No choice selected, cannot display.");
         }
