@@ -51,8 +51,6 @@ module.exports = {
 				
 				return randomNumber;
 			} catch (error) {
-				// Log the error
-				console.error(`Error: ${error.message}`);
 				
 				// Return a default value of 0
 				return 295238;
