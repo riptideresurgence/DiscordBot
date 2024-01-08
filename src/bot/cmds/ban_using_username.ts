@@ -7,7 +7,7 @@ module.exports = {
     permissions: ["INGAMEMOD"],
 	slashData: new SlashCommandBuilder()
 		.setName("ban_using_username")
-		.setDescription("Ban a player, using their username instead of user ID.")
+		.setDescription("Ban a player, using their username instead of user ID. This command will ban the player from all bitmapped games.")
         .addStringOption((option: SlashCommandStringOption) => option.setName("user_name").setDescription("User name of a player.").setRequired(true))
         .addIntegerOption((option: SlashCommandIntegerOption) => option.setName("ban_duration").setDescription("Ban duration (in minutes). Set to -1 will ban for indefinitely.").setRequired(true))
         .addStringOption((option: SlashCommandStringOption) => option.setName("reason").setDescription("Ban reason").setRequired(true)),
