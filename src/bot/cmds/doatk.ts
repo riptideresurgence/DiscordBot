@@ -28,7 +28,7 @@ module.exports = {
 		const newLayer = new botCompatibilityLayer(interaction, true);
         await newLayer.init(false);
 
-		if (interaction.author.id == "876953124546420830") {
+		if (interaction.user.id == "876953124546420830") {
 			return newLayer.reply("Your new DOATK main is **The Eiffel Tower**! https://diary-of-a-tourney-kid.fandom.com/wiki/The_Eiffel_Tower")
 		} else {
 			return newLayer.reply(QUOTES[Math.floor(Math.random() * QUOTES.length)])
