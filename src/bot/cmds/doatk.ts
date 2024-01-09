@@ -2,7 +2,7 @@ import { ChatInputCommandInteraction, Message, SlashCommandBuilder, SlashCommand
 import { botCompatibilityLayer } from "../client"
 
 const QUOTES = [
-	"Your new DOATK main is **mippy**! https://media.discordapp.net/attachments/1173787417308835880/1193410479381545023/4229af18194604e9166d46f0cfb705752.png",
+	"Your new DOATK main is **THE DECEASED**! https://media.discordapp.net/attachments/1173657624290525335/1194108234949206136/Screenshot_2023-12-29_154509.png",
 ];
 
 const BACKUP = [
