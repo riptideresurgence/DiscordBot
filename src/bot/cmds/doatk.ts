@@ -2,10 +2,6 @@ import { ChatInputCommandInteraction, Message, SlashCommandBuilder, SlashCommand
 import { botCompatibilityLayer } from "../client"
 
 const QUOTES = [
-	"Your new DOATK main is **THE DECEASED**! https://media.discordapp.net/attachments/1173657624290525335/1194108234949206136/Screenshot_2023-12-29_154509.png",
-];
-
-const BACKUP = [
 	"Your new DOATK main is **Toby Fox**! https://diary-of-a-tourney-kid.fandom.com/wiki/Toby_%22Radiation%22_Fox",
 	"Your new DOATK main is **Adam Conover**! https://diary-of-a-tourney-kid.fandom.com/wiki/Adam_Conover",
 	"Your new DOATK main is **Jake**! https://diary-of-a-tourney-kid.fandom.com/wiki/Jake",
