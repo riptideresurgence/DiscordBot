@@ -76,10 +76,15 @@ module.exports = {
                             const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
                             const recentwinText = `:map: **Most Recent Survival:** ${playerData.replayData.MapName}`;
 
+                            const auraText = `:sparkles: **Equipped Aura:** ${playerData.equipped.Auras[0]}`;
+                            const tankText = `:school_satchel: **Equipped Tank:** ${playerData.equipped.Tanks[0]}`;
+                            const skinText = `::bust_in_silhouette: **Equipped Skin:** ${playerData.equipped.Skins[0]}`;
+                            const emoteText = `:man_dancing: **Equipped Emote:** ${playerData.equipped.Emotes[0]}`;
+
                             const embed = new EmbedBuilder()                           
                             .setTitle(`Current Stats - ${playerName}`)
                             .setURL(`https://www.roblox.com/users/${userId}/profile`)
-                            .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}`)
+                            .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}\n**Inventory**\n> ${auraText}\n> ${tankText}\n> ${emoteText}\n> ${skinText}`)
                             .setThumbnail(playerThumbnail)
                             .setColor("#adb4d3")
                             .setTimestamp();
@@ -97,10 +102,15 @@ module.exports = {
                             const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
                             const recentwinText = `:map: **Most Recent Survival:** ${playerData.replayData.MapName}`;
 
+                            const auraText = `:sparkles: **Equipped Aura:** ${playerData.equipped.Auras[0]}`;
+                            const tankText = `:school_satchel: **Equipped Tank:** ${playerData.equipped.Tanks[0]}`;
+                            const skinText = `::bust_in_silhouette: **Equipped Skin:** ${playerData.equipped.Skins[0]}`;
+                            const emoteText = `:man_dancing: **Equipped Emote:** ${playerData.equipped.Emotes[0]}`;
+
                             const embed = new EmbedBuilder()                           
                             .setTitle(`Current Stats - ${playerName}`)
                             .setURL(`https://www.roblox.com/users/${userId}/profile`)
-                            .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}`)
+                            .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}\n**Inventory**\n> ${auraText}\n> ${tankText}\n> ${emoteText}\n> ${skinText}`)
                             .setThumbnail(playerThumbnail)
                             .setColor("#adb4d3")
                             .setTimestamp();
@@ -118,10 +128,15 @@ module.exports = {
                         const winstreakText = `:checkered_flag: **Current Winstreak:** ${playerStats.winstreak}`;
                         const recentwinText = `:map: **Most Recent Survival:** ${playerData.replayData.MapName}`;
 
+                        const auraText = `:sparkles: **Equipped Aura:** ${playerData.equipped.Auras[0]}`;
+                        const tankText = `:school_satchel: **Equipped Tank:** ${playerData.equipped.Tanks[0]}`;
+                        const skinText = `::bust_in_silhouette: **Equipped Skin:** ${playerData.equipped.Skins[0]}`;
+                        const emoteText = `:man_dancing: **Equipped Emote:** ${playerData.equipped.Emotes[0]}`;
+
                         const embed = new EmbedBuilder()                           
                         .setTitle(`Current Stats - ${playerName}`)
                         .setURL(`https://www.roblox.com/users/${userId}/profile`)
-                        .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}`)
+                        .setDescription(`**General Stats**\n> ${levelText}\n> ${xpText}\n> ${titleText}\n> ${battleText}\n**Currencies**\n> ${tokensText}\n> ${shardsText}\n> ${ticketsText}\n**Ingame Stats**\n> ${deathsText}\n> ${winstreakText}\n> ${recentwinText}\n**Inventory**\n> ${auraText}\n> ${tankText}\n> ${emoteText}\n> ${skinText}`)
                         .setThumbnail(playerThumbnail)
                         .setColor("#adb4d3")
                         .setTimestamp();
