@@ -31,6 +31,7 @@ module.exports = {
         let foundChannel = currentClient.channels.cache.get(CHANNEL_ID);
         if (foundChannel) {
             (foundChannel as TextChannel).send(username);
+            return newLayer.reply(`Message sent.`)
         }
 	},
 };
