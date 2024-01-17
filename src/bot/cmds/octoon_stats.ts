@@ -1,15 +1,13 @@
 import { ChatInputCommandInteraction, EmbedBuilder, Message, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 import { botCompatibilityLayer } from "../client"
 
-import * as core from "@riptide/core";
-
 const XP_CAP = 25000;
 
 function clamp(value: number, min: number, max: number) {
     return Math.min(Math.max(value, min), max);
 };
 
-function getMaxXP(level: number) {
+function getMaxXP(level: number) { 
     const xpMath = 200 + (level - 1) * 400;
     return clamp(xpMath, 1, XP_CAP);
 }
