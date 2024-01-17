@@ -17,6 +17,7 @@ module.exports = {
                     {name: "Previous Month", value: "prev_month"},
                     {name: "Surgefest: Candy Canes vs Gingerbread", value: "fest_xmas"},
                     {name: "Surgefest: Rig vs Bob vs Template", value: "fest_hosts"},
+                    {name: "Surgefest: Vanilla vs Chocolate vs Strawberry", value: "fest_icecream"},
                 )
         ),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>) {
@@ -165,6 +166,8 @@ module.exports = {
             .catch((err) => {
                 newLayer.reply(`Cannot fetch leaderboard: ${err}`);
             });
+        } else if (leaderboardSection == "fest_icecream") {
+            return newLayer.reply("This fest has yet to conclude, as such you cannot display it's leaderboard.");
         } else {
             core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 20, true)
             .then(async (entries) => {
