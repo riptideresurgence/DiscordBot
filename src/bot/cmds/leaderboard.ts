@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, EmbedBuilder, Message, SlashCommandBuilder, SlashCommandIntegerOption, SlashCommandStringOption } from "discord.js";
+import { ChatInputCommandInteraction, EmbedBuilder, Message, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 import { botCompatibilityLayer } from "../client"
 
 import * as core from "@riptide/core";
@@ -48,7 +48,7 @@ module.exports = {
         }
         const currentMonthName = getMonthName(currentMonth);
         const lastMonthName = getMonthName(lastMonth);
- 
+
         let leaderboardStore = "ATLeaderStore";
         let leaderboardName = "All Time Leaderboard"
         if (leaderboardSection == "cur_month") {
@@ -166,8 +166,6 @@ module.exports = {
             .catch((err) => {
                 newLayer.reply(`Cannot fetch leaderboard: ${err}`);
             });
-        } else if (leaderboardSection == "fest_icecream") {
-            return newLayer.reply("This fest has yet to conclude, as such you cannot display it's leaderboard.");
         } else {
             core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 20, true)
             .then(async (entries) => {
