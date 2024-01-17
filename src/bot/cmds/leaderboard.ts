@@ -48,7 +48,7 @@ module.exports = {
         }
         const currentMonthName = getMonthName(currentMonth);
         const lastMonthName = getMonthName(lastMonth);
-
+ 
         let leaderboardStore = "ATLeaderStore";
         let leaderboardName = "All Time Leaderboard"
         if (leaderboardSection == "cur_month") {
