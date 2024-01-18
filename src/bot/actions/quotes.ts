@@ -6,7 +6,7 @@ const QUOTES = [
     "https://www.youtube.com/watch?v=hncs8JIN1cA&pp=ygUTZG91Z2RvdWcgZmF0IGFsYmVydA%3D%3D",
 ];
 const CHANNEL_ID = "1173630298936856708";
-const INTERVAL = 3600000; // 10 Minutes
+const INTERVAL = 1800000; // 10 Minutes
 
 let currentClient: botClient | undefined = undefined;
 let intervalHandler: NodeJS.Timeout | undefined = undefined;
