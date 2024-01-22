@@ -1,6 +1,6 @@
 import { ChatInputCommandInteraction, Message, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 import { botCompatibilityLayer } from "../client"
-
+ 
 const QUOTES = [
 	"It is certain :white_check_mark:",
 	"It is decidedly so :white_check_mark:",
