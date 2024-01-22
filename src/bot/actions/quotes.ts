@@ -4,6 +4,7 @@ import { botClient } from "../client";
 
 const QUOTES = [
     "https://www.youtube.com/watch?v=hncs8JIN1cA&pp=ygUTZG91Z2RvdWcgZmF0IGFsYmVydA%3D%3D",
+    "⚠️ Community Notice ⚠️\n**We do NOT tolerate abuse from others against the community, its creators and their creations.**\nFollow the rules: https://discord.com/channels/1173630297657585725/1173630412396953610\nReport members breaking rules: https://discord.com/channels/1173630297657585725/1179748474955243572",
 ];
 const CHANNEL_ID = "1173630298936856708";
 const INTERVAL = 1800000; // 10 Minutes

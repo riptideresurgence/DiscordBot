@@ -3,7 +3,7 @@ import { botCompatibilityLayer } from "../client"
 
 module.exports = {
 	slashData: new SlashCommandBuilder()
-	.setName("bluefyx")
+	.setName("bluefyx") 
 	.setDescription("bluefyx")
 	.addStringOption((option: SlashCommandStringOption) => 
 		option.setName("bluefyx")
