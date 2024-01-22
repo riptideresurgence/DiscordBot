@@ -31,6 +31,6 @@ module.exports = {
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
 		const newLayer = new botCompatibilityLayer(interaction, true);
         await newLayer.init(false);
-		return newLayer.reply(`**Question:** "${args[0]}"\n**Answer:** ${QUOTES[Math.floor(Math.random() * QUOTES.length)]}`)
+		return newLayer.reply(`**Question:** "${interaction.options.getString("question")}"\n**Answer:** ${QUOTES[Math.floor(Math.random() * QUOTES.length)]}`)
 	},
 };
