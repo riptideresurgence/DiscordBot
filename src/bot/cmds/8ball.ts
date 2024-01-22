@@ -30,7 +30,17 @@ module.exports = {
 		.addStringOption((option: SlashCommandStringOption) => option.setName("question").setDescription("The question you are asking.").setRequired(true)),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
 		const newLayer = new botCompatibilityLayer(interaction, true);
+
+		if (interaction instanceof ChatInputCommandInteraction)
+		if (args.length == 0)
+		args = [interaction.options.getString("user_name")]
+
+		const question: string | undefined = args[0];
+	
+		if (!question)
+		return newLayer.reply("Question must be a string.");
+
         await newLayer.init(false);
-		return newLayer.reply(`**Question:** "${interaction.options.getString("question")}"\n**Answer:** ${QUOTES[Math.floor(Math.random() * QUOTES.length)]}`)
+		return newLayer.reply(`**Question:** "${args[0]}"\n**Answer:** ${QUOTES[Math.floor(Math.random() * QUOTES.length)]}`)
 	},
 };
