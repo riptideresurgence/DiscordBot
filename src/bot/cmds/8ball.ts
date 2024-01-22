@@ -33,7 +33,7 @@ module.exports = {
 
 		if (interaction instanceof ChatInputCommandInteraction)
 		if (args.length == 0)
-		args = [interaction.options.getString("user_name")]
+		args = [interaction.options.getString("question")]
 
 		const question: string | undefined = args[0];
 	
