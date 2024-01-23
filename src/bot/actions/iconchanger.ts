@@ -47,7 +47,7 @@ async function changeGuildIcon() {
         if (randomMessage.attachments.size > 0) {
             imageUrl = randomMessage.attachments.first().url;
         } else {
-            imageUrl = findLinksWithExtension(msg.content, ".gif")[0];
+            imageUrl = findLinksWithExtension(randomMessage.content, ".gif")[0];
         }
 
         try {
