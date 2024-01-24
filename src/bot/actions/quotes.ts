@@ -13,6 +13,14 @@ const QUOTES = [
     "https://media.discordapp.net/attachments/1190776756987236502/1198967622411231273/attachment.gif?ex=65c0d49c&is=65ae5f9c&hm=55ec4260406d9d598cb3bafb6fa58b71b1dd9fefbc7a6d9aaae7956349c8b653&=",
     "https://www.youtube.com/watch?v=Y45DvFuO7e0",
     "https://media.discordapp.net/attachments/1113082228927381518/1117499279880241312/attachment.gif?ex=65bfc34e&is=65ad4e4e&hm=9f433221f1ebb024354e6355dd6afea83be858cb4703040430adb64c1c4bd732&=",
+    "lalala",
+    "doing your mom? that's just... insulting!",
+    "<@876953124546420830> fuck you",
+    "rocraftmineblox0",
+    "g",
+    "this is a funny quote",
+    "You can suggest quotes for what I can say in https://discord.com/channels/1173630297657585725/1196091574363377705!",
+    "GeoNow stinks"
 ];
 const CHANNEL_ID = "1173630298936856708";
 const INTERVAL = 1800000; // 10 Minutes
