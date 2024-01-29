@@ -64,6 +64,9 @@ module.exports = {
         } else if (leaderboardSection == "fest_hosts") {
             leaderboardStore = `stupidFart!!!FestTop50_Hosts`;
             leaderboardName = `Surgefest Top 50 Leaderboard - Rig vs Bob vs Template`;
+        } else if (leaderboardSection == "fest_icecream") {
+            leaderboardStore = `stupidFart!!!FestTop50_IceCream`;
+            leaderboardName = `Surgefest Top 50 Leaderboard - Vanilla vs Chocolate vs Strawberry`;
         }
 
         if (leaderboardSection == "fest_xmas") {
@@ -117,6 +120,56 @@ module.exports = {
                 newLayer.reply(`Cannot fetch leaderboard: ${err}`);
             });
         } else if (leaderboardSection == "fest_hosts") {
+            core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 50, true)
+            .then(async (entries) => {
+                let userIds = entries.map(x => parseInt(x.id));
+                if (userIds.length == 0) {
+                    return newLayer.reply("Leaderboard is empty.");
+                }
+
+                core.roblox.getBatchUserInfo(userIds)
+                    .then((batchInfo) => {
+                        const constructedLeaderboardData: {name: string, xp: number}[] = [];
+
+                        batchInfo.forEach((info) => {
+                            const xpValue = parseInt(entries.filter(x => parseInt(x.id) == info.userId)[0].value);
+                            constructedLeaderboardData.push({
+                                name: core.roblox.getNameRepresentationFromInfo(info),
+                                xp: xpValue
+                            });
+                        });
+
+                        const sortedLeaderboardData = constructedLeaderboardData.sort((a, b) => b.xp - a.xp);
+                        const leaderboardListForSend: string[] = [];
+                        const emojis: {[id: number]: string} = {
+                            0: ":first_place:",
+                            1: ":second_place:",
+                            2: ":third_place:"
+                        }
+
+                        for (let i = 0; i < sortedLeaderboardData.length; i++) {
+                            if (i <= 2) {
+                                leaderboardListForSend.push(`${emojis[i]} **${sortedLeaderboardData[i].name}** : *${sortedLeaderboardData[i].xp} EXP*`)
+                            } else {
+                                leaderboardListForSend.push(`**${i + 1}th - ${sortedLeaderboardData[i].name}** : *${sortedLeaderboardData[i].xp} EXP*`)
+                            }
+                        }
+                        const embed = new EmbedBuilder()
+                            .setTitle(leaderboardName)
+                            .setDescription(leaderboardListForSend.join("\n"))
+                            .setColor("#00b0f4")
+                            .setTimestamp();
+                      
+                        newLayer.reply({ embeds: [embed] });
+                    })
+                    .catch((err) => {
+                        newLayer.reply(`Cannot fetch players' info: ${err}`);
+                    })
+            })
+            .catch((err) => {
+                newLayer.reply(`Cannot fetch leaderboard: ${err}`);
+            });
+        } else if (leaderboardSection == "fest_icecream") {
             core.roblox.getEntriesFromOrderedDataStore(5113672776, leaderboardStore, 50, true)
             .then(async (entries) => {
                 let userIds = entries.map(x => parseInt(x.id));
