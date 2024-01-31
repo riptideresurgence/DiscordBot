@@ -60,7 +60,7 @@ function setInfo() {
  
     const coolNumber = Math.floor(Math.random() * possibleIcons.length)
 
-  
+   
     if (!guild) {
         return;
     }
