@@ -20,7 +20,7 @@ const possibleNames = [
 
 function changeGuildIcon() {
     try {
-        const guild = await client.guilds.fetch(guildId);
+        const guild = client.guilds.fetch(guildId);
 
         const coolNumber = Math.floor(Math.random() * possibleIcons.length)
 
