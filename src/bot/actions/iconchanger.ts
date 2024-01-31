@@ -1,7 +1,6 @@
 // const { Client, Intents } = require('discord.js');
 
 // so true
-import { guild } from "discord.js";
 import { botClient } from "../client";
 
 //const client = new Client({
@@ -65,8 +64,8 @@ function setInfo() {
         return;
     }
 
-    currentClient.guild.setIcon(possibleIcons[coolNumber]);
-    currentClient.guild.setName(possibleNames[coolNumber]);
+    guild.setIcon(possibleIcons[coolNumber]);
+    guild.setName(possibleNames[coolNumber]);
 }
 
 function run() {
