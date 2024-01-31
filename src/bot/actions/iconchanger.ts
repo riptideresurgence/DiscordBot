@@ -9,6 +9,13 @@ const client = new Client({
 const channelId = '1176997797485101057';
 const guildId = '1173630297657585725';
 
+const possibleIcons = [
+    "https://media.discordapp.net/attachments/1176997797485101057/1202371817390604369/256px-S3_Weapon_Main_Slosher.png",
+];
+const possibleNames = [
+    "sloshermapped."
+];
+
 const linkRegexp = new RegExp("\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))");
 function findLinksWithExtension(content: string, extension: string) {
     const foundLinks = linkRegexp.exec(content);
@@ -23,38 +30,15 @@ client.once('ready', () => {
 async function changeGuildIcon() {
     try {
         const guild = await client.guilds.fetch(guildId);
-        
+
+        const coolNumber = Math.floor(Math.random() * possibleIcons.length)
+
         if (!guild) {
             throw new Error('Guild not found.');
         }
 
-        const channel = guild.channels.cache.get(channelId);
-
-        if (!channel) {
-            throw new Error('Channel not found.');
-        }
-
-        const messages = await channel.messages.fetch();
-        const imageMessages = messages.filter((msg: any) => msg.attachments.size > 0 || findLinksWithExtension(msg.content, ".gif").length > 0);
-
-        if (imageMessages.size === 0) {
-            throw new Error('No image messages found in the channel.');
-        }
-
-        const randomMessage = imageMessages.random();
-
-        let imageUrl = undefined;
-        if (randomMessage.attachments.size > 0) {
-            imageUrl = randomMessage.attachments.first().url;
-        } else {
-            imageUrl = findLinksWithExtension(randomMessage.content, ".gif")[0];
-        }
-
-        try {
-            await guild.setIcon(imageUrl);
-        } catch (error) {
-            
-        }
+        guild.setIcon(possibleIcons[coolNumber]);
+        guild.setName(possibleNames[coolNumber]);
     } catch (error) {
        
     }
