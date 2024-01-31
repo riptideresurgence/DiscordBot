@@ -21,20 +21,16 @@ const possibleNames = [
 ];
 
 function changeGuildIcon() {
-    try {
-        const guild = client.guilds.fetch(guildId);
+    const guild = client.guilds.fetch(guildId);
 
-        const coolNumber = Math.floor(Math.random() * possibleIcons.length)
+    const coolNumber = Math.floor(Math.random() * possibleIcons.length)
 
-        if (!guild) {
-            throw new Error('Guild not found.');
-        }
-
-        guild.setIcon(possibleIcons[coolNumber]);
-        guild.setName(possibleNames[coolNumber]);
-    } catch (error) {
-       
+    if (!guild) {
+       return
     }
+
+    guild.setIcon(possibleIcons[coolNumber]);
+    guild.setName(possibleNames[coolNumber]);
 }
 
 function run() {
