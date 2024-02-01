@@ -25,7 +25,7 @@ function changeGuildIcon() {
 
     const coolNumber = Math.floor(Math.random() * possibleIcons.length)
 
-    if (!guild) {
+    if (!guild) { 
        return
     }
 
