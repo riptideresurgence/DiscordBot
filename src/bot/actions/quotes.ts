@@ -34,7 +34,7 @@ function setClient(client: botClient) {
 
 function run() {
     if (intervalHandler) {
-        clearInterval(intervalHandler);
+        clearInterval(intervalHandler); 
     }
     intervalHandler = setInterval(() => {
         if (!currentClient) {
