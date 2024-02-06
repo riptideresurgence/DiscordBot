@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, Message, SlashCommandBuilder } from "discord.js";
+import { Client, ChatInputCommandInteraction, Message, SlashCommandBuilder } from "discord.js";
 import { botCompatibilityLayer } from "../client"
 
 module.exports = {
@@ -8,15 +8,7 @@ module.exports = {
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
 		const newLayer = new botCompatibilityLayer(interaction, true);
         await newLayer.init(false);
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
-		newLayer.reply(`<@876953124546420830>`)
+
+		Client.guilds.get(`1173630297657585725`).channels.get(`1173630298936856708`).send("<@876953124546420830>")
 	},
 };
