@@ -32,7 +32,7 @@ module.exports = {
         
         core.roblox.getEntryFromDataStore(5113672776, "PostDataStore", "Posts")
             .then((entry) => {
-                const postTable = entry.Posts;
+                const postTable = entry;
                 if (!postTable) {
                     return newLayer.reply("Couldn't fetch post data.");
                 }
