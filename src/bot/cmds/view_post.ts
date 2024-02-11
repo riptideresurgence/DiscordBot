@@ -22,6 +22,9 @@ module.exports = {
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
 		const newLayer = new botCompatibilityLayer(interaction, true);
         await newLayer.init(false);
+        if (interaction instanceof ChatInputCommandInteraction)
+        if (args.length == 0)
+            args = [interaction.options.getString("post_number")]
 
         const postNumber: number | undefined = args[0] ? parseInt(args[0]) : undefined;
         if (!postNumber)
@@ -35,6 +38,9 @@ module.exports = {
                 const postTable = entry.data;
                 if (!postTable) {
                     return newLayer.reply("Couldn't fetch post data.");
+                }
+                if (postNumber - 1 > postTable.Posts.length) {
+                    return newLayer.reply(`This post does not exist. Current number of posts: ${postTable.Posts.length}`);
                 }
                 let specificPost = postTable.Posts[postNumber - 1]
                 const embed = new EmbedBuilder()                           
