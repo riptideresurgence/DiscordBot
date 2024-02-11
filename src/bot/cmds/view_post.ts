@@ -32,11 +32,11 @@ module.exports = {
         
         core.roblox.getEntryFromDataStore(5113672776, "PostDataStore", "Posts")
             .then((entry) => {
-                const postTable = entry.Posts;
+                const postTable = entry;
                 if (!postTable) {
                     return newLayer.reply("Couldn't fetch post data.");
                 }
-                let specificPost = postTable[postNumber - 1]
+                let specificPost = postTable.Posts[postNumber - 1]
                 const embed = new EmbedBuilder()                           
                 .setTitle(`${specificPost.PlrName}'s Post`)
                 .setDescription(specificPost.Post)
