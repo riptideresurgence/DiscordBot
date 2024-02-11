@@ -24,7 +24,7 @@ module.exports = {
         await newLayer.init(false);
         if (interaction instanceof ChatInputCommandInteraction)
         if (args.length == 0)
-            args = [interaction.options.getString("post_number")]
+            args = [interaction.options.parseInt("post_number")]
 
         const postNumber: number | undefined = args[0] ? parseInt(args[0]) : undefined;
         if (!postNumber)
