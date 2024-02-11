@@ -30,7 +30,7 @@ module.exports = {
             return newLayer.reply("Post number cannot be negative.");
         }
         
-        core.roblox.getEntryFromDataStore(5113672776, "PostDataStore", `Posts`)
+        core.roblox.getEntryFromDataStore(5113672776, "PostDataStore", "Posts")
             .then((entry) => {
                 const postTable = entry.Posts;
                 if (!postTable) {
