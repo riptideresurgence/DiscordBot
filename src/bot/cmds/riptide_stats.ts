@@ -80,7 +80,7 @@ module.exports = {
                             const skinText = `:bust_in_silhouette: **Equipped Skin:** ${playerData.equipped.Skins[0]}`;
                             const emoteText = `:man_dancing: **Equipped Emote:** ${playerData.equipped.Emotes[0]}`;
 
-                            const sexText = `:warning: **Sex Unlocked: ** ${playerStats.level >= 5 ? "Yes" : "No"}`;
+                            const sexText = `:warning: **Sex Unlocked: ** ${playerStats.level >= 100 ? "Yes" : "No"}`;
                             
                             if (!playerData.killQuotes) {
                                 const embed = new EmbedBuilder()                           
@@ -125,7 +125,7 @@ module.exports = {
                             const skinText = `::bust_in_silhouette: **Equipped Skin:** ${playerData.equipped.Skins[0]}`;
                             const emoteText = `:man_dancing: **Equipped Emote:** ${playerData.equipped.Emotes[0]}`;
 
-                            const sexText = `:warning: **Sex Unlocked: ** ${playerStats.level >= 5 ? "Yes" : "No"}`;
+                            const sexText = `:warning: **Sex Unlocked: ** ${playerStats.level >= 100 ? "Yes" : "No"}`;
 
                             if (!playerData.killQuotes) {
                                 const embed = new EmbedBuilder()                           
@@ -170,7 +170,7 @@ module.exports = {
                         const skinText = `::bust_in_silhouette: **Equipped Skin:** ${playerData.equipped.Skins[0]}`;
                         const emoteText = `:man_dancing: **Equipped Emote:** ${playerData.equipped.Emotes[0]}`;
 
-                        const sexText = `:warning: **Sex Unlocked: ** ${playerStats.level >= 5 ? "Yes" : "No"}`;
+                        const sexText = `:warning: **Sex Unlocked: ** ${playerStats.level >= 100 ? "Yes" : "No"}`;
                         
                         if (!playerData.killQuotes) {
                             const embed = new EmbedBuilder()                           
