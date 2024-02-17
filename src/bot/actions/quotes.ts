@@ -23,7 +23,6 @@ const QUOTES = [
     "GeoNow stinks",
     "https://www.youtube.com/watch?v=5_mx2pfrtFs&ab_channel=2HOESLOL",
     "the fr!nch isnt real…",
-    "@bluefyx This is gotta be the last message of this post.\nSo i'm gotta lock this post because i have enough to see lot of messages taking about CP all the Times. I don't want it highlighted. And even played. The V1 model is gotta be unplayable After tomorrow. Gameplay and OST will be privated.\nThis might be deceiving. But i really got enough to see this. The joke as gone too far. No this Map isn't gotta get highlighted. And never the V1 gotta be.\nIts now the end of CP.",
     "https://cdn.discordapp.com/attachments/1196091574363377705/1204094857518391316/d4973e2ecefa4aeeab880a3d6bafd61f.mp4?ex=65d37bb9&is=65c106b9&hm=82c6dbecf006a99909050decae73494037e4a2c8cd01c20b254281a32bee1af9&",
     "FLY HIGH VOLCANIC ERUPTION PASSIVITY 🕊️",
     "anotha dub for the dub nation",
