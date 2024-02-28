@@ -37,7 +37,7 @@ const QUOTES = [
     "https://media.discordapp.net/attachments/1173630298936856708/1191933810456133662/togif.gif?ex=65d5625d&is=65c2ed5d&hm=f213f87e2d51be6f5af0ebba59ddc8df736d92a37eb973b117865d0fd6cf67b8&=",
     "smortyes"
 ];
-const CHANNEL_ID = "1173630298936856708";
+const CHANNEL_ID = "1212193048214118443";
 const INTERVAL = 1800000; // 10 Minutes
 
 let currentClient: botClient | undefined = undefined;
