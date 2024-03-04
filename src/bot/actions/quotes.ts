@@ -44,7 +44,8 @@ const QUOTES = [
     "https://media.discordapp.net/attachments/1196091574363377705/1207428493839827005/cheesy_valentines_card__minecraft_by_pickleplayer_d5v2ufv-pre_1.jpg?ex=65e8d6e9&is=65d661e9&hm=3fa9ffde4c4e4beb1b66ee22c07e9a58296b0be55919b918f35cd118ac444f97&=&format=webp&width=701&height=701",
     "USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅USA🦅",
     "https://media.discordapp.net/attachments/866381060359061534/882133943124639785/freeze.gif?ex=65efe741&is=65dd7241&hm=a66b9176410109ce5411fefa49535c5485a93077f5f2a5c99effda0ba50c8fa7&=",
-    "discord.gg/bitmapped"
+    "discord.gg/bitmapped",
+    "You can see souls coming out of Pandora’s Box and hear the screams too ‼️👀 #Fortnite",
 ];
 const CHANNEL_ID = "1212193048214118443";
 const INTERVAL = 1800000; // 10 Minutes
