@@ -47,7 +47,8 @@ const QUOTES = [
     "discord.gg/bitmapped",
     "You can see souls coming out of Pandora’s Box and hear the screams too ‼️👀 #Fortnite",
     "<@660463781377343488> kill yourself",
-    "smortyes"
+    "smortyes",
+    "🐝"
 ];
 const CHANNEL_ID = "1212193048214118443";
 const INTERVAL = 1800000; // 10 Minutes
