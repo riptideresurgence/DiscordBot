@@ -1,7 +1,7 @@
 import { ChatInputCommandInteraction, Message, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 import { botCompatibilityLayer } from "../client"
 
-const QUOTES = [
+const QUOTES = [ 
 	"Your new DOATK main is **Toby Fox**! https://diary-of-a-tourney-kid.fandom.com/wiki/Toby_%22Radiation%22_Fox",
 	"Your new DOATK main is **Adam Conover**! https://diary-of-a-tourney-kid.fandom.com/wiki/Adam_Conover",
 	"Your new DOATK main is **Jake**! https://diary-of-a-tourney-kid.fandom.com/wiki/Jake",
