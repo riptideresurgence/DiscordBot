@@ -44,7 +44,7 @@ module.exports = {
                 }
                 let specificPost = postTable.Posts[postNumber - 1]
                 const embed = new EmbedBuilder()                           
-                .setTitle(`${specificPost.PlrName}'s Post`)
+                .setTitle(`${specificPost.PlrName}'s Post`)s
                 .setDescription(specificPost.Post)
                 .setColor("#adb4d3")
                 .setTimestamp();
