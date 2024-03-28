@@ -3,7 +3,7 @@ import { botCompatibilityLayer } from "../client"
 
 module.exports = {
 	slashData: new SlashCommandBuilder()
-	.setName("bluefyx")
+	.setName("bluefyx") 
 	.setDescription("bluefyx")
 	.addStringOption((option: SlashCommandStringOption) => 
 		option.setName("bluefyx")
@@ -11,7 +11,7 @@ module.exports = {
 			.setRequired(true)
 			.addChoices(
 				{name: "bluefyx", value: "bluefyx"},
-				{name: "Bluefyx's Victims", value: "victims"},
+				{name: "This command doesn't exist", value: "victims"},
 			)
 	),
 	async execute(interaction: ChatInputCommandInteraction<any> | Message<boolean>, args: any[]) {
@@ -60,7 +60,7 @@ module.exports = {
 		const victimCount = generateRandomNumber(100, 100000)
 
 		if (bluefyxCommand == "victims") {
-			return newLayer.reply(`bluefyx currently has ${victimCount} victims.`)
+			return newLayer.reply(`LITERALLY STOP BEE REACTING I'VE REPEATED THIS\nIT'S LITERALLY FLOODING THE CHAT AND IT'S ALSO ANNOYING ME AND OTHERS\nDONT YOU FUCKING DARE BEE REACT TO THIS\nEITHER I'LL HAVE YOUR USER NOTED`)
 		} else if (bluefyxCommand == "bluefyx") {
 			return newLayer.reply(`https://media.discordapp.net/attachments/1088196021982609420/1168722340419489844/caption.gif`)
 		}

@@ -20,7 +20,7 @@ module.exports = {
 		.setDescription("Get the current Octoon stage rotation.")
         .addStringOption((option: SlashCommandStringOption) => 
         option.setName("section")
-            .setDescription("Select the rotation to display.")
+            .setDescription("Select the rotation to display.") 
             .setRequired(true)
             .addChoices(
                 {name: "Casual Battle", value: "regbattle"},
